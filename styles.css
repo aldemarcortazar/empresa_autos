@@ -1,0 +1,579 @@
+/*****************Custom Properties**************/
+:root{
+    --background-color:#E8E2E2;
+    --white-color:#ffffff;
+    --blue-color:#3893E8;
+    --blue-alpha-color:rgba(6, 110, 179, 0.5);
+    --black-color:#000000;
+    --font:"Raleway", sans-serif;
+    --max-width:95%;
+    --header-height:4rem;
+    --header-height-large:7rem;
+    --white-alpha-color:rgba(255,255,255,0.5);
+    --dark-alpha-color:rgba(0,0,0,0.5);
+}
+
+
+/*****************Reseteo************************/
+
+html{
+    box-sizing: border-box;
+    font-size: border-box;
+    font-family: var(--font);
+    scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: inherit;
+}
+
+body{
+    color:var(--black-color);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+a{
+    color: var(--blue-color);
+    transition: all 0.5s ease-in-out;
+}
+
+a:hover{
+    opacity: 0.75;
+}
+
+h1{
+    font-size: 2rem;
+    margin: 0;
+}
+
+h2{
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+h3{
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+h4{
+    font-size: 1rem;
+    margin: 0;
+}
+
+h5{
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+h6{
+    font-size: 0.75rem;
+    margin: 0;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+p{
+    line-height: 1.6rem;
+}
+/****************Components*********************/
+
+/****************Contact Form*************************/
+.contact-form{
+    padding: 1rem;
+    margin: 2rem auto;
+    max-width: 800px;
+}
+
+.contact-form > * {
+    display: block;
+    margin: 1rem auto;
+    padding: .5rem;
+    width: 100%;
+}
+
+.contact-form input,
+.contact-form textarea{
+    font-size: .85rem;
+    font-family: var(--font);
+}
+
+.contact-form input{
+    border: none;
+    border-bottom: thin solid var(--blue-color);
+    padding-left: 0;
+}
+
+.contact-form textarea{
+    border: thin solid var(--dark-alpha-color);
+    resize: none;
+}
+.contact-form input[type="submit"]{
+    background-color: var(--blue-color);
+    color: var(--white-color);
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+}
+
+.conctact-form-loader img{
+    fill: var(--blue-color);
+}
+
+@media screen and (min-width: 1024px){
+    .contact-form{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .contact-form textarea,
+    .conctact-form-loader{
+        grid-column: span 2;
+    }
+
+    .contact-form input[type="submit"]{
+        width: 50%;
+        grid-column: 1 / 3;
+    }
+}
+
+/**********************Hero Image **************/
+.hero-image{
+    background-image: var(--image);
+    background-repeat: no-repeat;
+    background-attachment: var(--attachment);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+}
+
+.hero-image-opacity{
+    align-items: center;
+    background-color: var(--opacity);
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    width: 100%;
+}
+
+.hero-image-title{
+    font-size: 7.5vw;
+    color: var(--hero-title-color);
+}
+
+/*********menu************/
+.menu-btn{
+    background-color: var(--blue-color);
+    border: none;
+    cursor: pointer;
+    outline: thin solid var(--blue-color);
+}
+
+.menu-btn svg{
+    fill: var(--white-color);
+}
+
+.menu{
+    align-items: center;
+    background-color: var(--blue-color);
+    color: var(--white-color);
+    position: fixed;
+    bottom: var(--header-height);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left: 0;
+    transition: opacity .5s ease;
+    opacity: 0;
+    pointer-events: none;
+    width: 100%;
+}
+
+.menu.isactive{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.menu a{
+    color: var(--white-color);
+    font-size: 1.5rem;
+    padding: 1rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+}
+
+.menu a:last-child{
+    padding-right: 0;
+}
+
+.menu a:hover{
+    background-color: var(--white-color);
+    color: var(--black-color);
+}
+
+@media screen and (min-width: 1024px){
+    .menu-btn{
+        display: none;
+    }
+
+    .menu{
+        background-color: var(--white-color);
+        position: static;
+        opacity: 1;
+        pointer-events: auto;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .menu a{
+        color: var(--blue-color);
+    }
+
+    .menu :last-child{
+        color: var(--white-color);
+        padding: .7rem .3rem;
+    }
+    .menu :last-child:hover{
+        background-color: var(--blue-color);
+        color: var(--white-color);
+    }
+
+}
+
+
+/************Modal******************/
+.modal{
+    align-items: center;
+    background-color: var(--dark-alpha-color);
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top:0;
+    bottom: 0;
+    right: 0;
+    z-index: 1000;
+    transition: all 1s;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal.is-active{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content{
+    background-color: var(--white-color);
+    display: flex;
+    justify-content: center;
+    height: 30%;
+    /* width: 30%; */
+}
+
+.contact-form-response{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.contact-form-response h3{
+    color: var(--blue-color);
+    border-bottom: medium solid var(--blue-color);
+    font-size: 3vw;
+    margin: 1rem ;
+    padding: .5rem 0;
+    text-align: center;
+}
+
+.contact-form-response > svg{
+    fill: var(--blue-color);
+    height: 3rem;
+    width: 3rem;
+}
+
+/**************Utilities*********************/
+
+.box-shadow-1{
+    box-shadow: 4px 4px 16px var(--dark-alpha-color);
+}
+.btn{
+    background-color: var(--blue-color);
+    border-radius: 5px;
+    color: var(--white-color);
+    display: inline-block;
+    font-weight: bold;
+    padding: 1rem;
+    text-align: center;
+    text-decoration: none;
+    width: 200px;
+}
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: var(--max-width);
+}
+
+.mg-top-md{
+    margin-top: 2rem;
+}
+.mg-bottom-md{
+    margin-bottom: 2rem;
+}
+.none{
+    display: none;
+}
+
+.section{
+    margin: 2rem 1rem;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.title-section{
+    color:var(--blue-color);
+    font-weight: bold;
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.tex-left{
+    text-align: left;
+}
+
+@media screen and (min-width: 1024px){
+    .full-lg-screen{
+        width: 100%;
+        min-height: 100vh;
+    }
+    .text-lg-right{
+        text-align: right;
+    }
+    .text-lg-left{
+        text-align: left;
+    }
+    .text-lg-center{
+        text-align: center;
+    }
+}
+
+
+
+/*****************Syte Styles**************************/
+
+.conctact-card{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 1rem auto;
+    height: 144px;
+    width: 100%;
+}
+
+.conctact-card > svg{
+    fill: var(--blue-color) !important;
+    height: 3rem;
+    width: 3rem;
+}
+.redes-sociales svg{
+    fill: var(--blue-color);
+    width:2rem;
+    height:2rem;
+}
+
+.header{
+    background-color: var(--white-color);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    height: var(--header-height);
+    width: 100vw;
+    z-index: 999;
+}
+
+.header .container{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.header .container img{
+    width: 35%;
+}
+
+.beneficiosp p{
+    cursor: pointer;
+    margin: 2rem 0;
+}
+.tratocamiones-card{
+    display: block;   
+    position: relative;
+    margin: 0rem auto;
+    width: 100%;
+}
+
+.tratocamiones-card img{
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.tratocamiones-card-info{
+    background-color: var(--blue-alpha-color);
+    color: var(--white-color);
+    height: 100%;
+    opacity: 0;
+    padding: 1rem;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all .5s ease-in-out;
+    width: 100%;
+}
+
+.tratocamiones-card:hover .tratocamiones-card-info{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.cliente-m{
+    position: relative;
+    top: 0;
+}
+.cemex{
+    color: #ffffff;
+    fill: #ffffff;
+    position: absolute; 
+    margin: 0 auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+.cliente-m h3{
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    font-size: 4.5vw;
+}
+/*************mision  vision*****************/
+
+
+.mision-vision{
+
+}
+.mision-vision .image-logo{
+    background-color: var(--dark-alpha-color);
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+    margin: 1rem auto;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mision-vision .image-logo img{
+    
+    height: 80%;
+    width: 80%;
+}
+
+.politicas-valores ul  {
+    list-style: none;
+}
+.footer{
+    align-items: center;
+    background-color: var(--blue-color);
+    color: var(--white-color);
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--header-height);
+}
+
+@media screen and (min-width: 768px){
+    .tratocamiones .container{
+        display: grid;
+        grid-template-columns: repeat(2 , 48%);
+        justify-content: space-between;
+    }
+    .tratocamiones .container h2{
+        grid-column: span 2;
+    }
+
+    .conctact-cards{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: space-between;
+    }
+    .mision-vision > .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .about-def{
+        align-items: center;
+        display: grid;
+        grid-template-columns: 28% 68%;
+        justify-content: space-between;
+
+    }
+    .conctact-cards{
+        grid-template-columns: repeat(4, 24%);
+    }
+
+    .header{
+        position: sticky;
+        top: 0;
+        padding: .5rem;
+        height: calc( var(--header-height-large) - .5rem );
+    }
+
+    .header .container img{
+        width: 80%;
+    }
+    .services > .def{
+        width: 70%;
+        margin: 10vh auto;
+    }
+    .beneficiosp{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+    .tratocamiones .container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .tratocamiones .container h2{
+        grid-column: span 3;
+    }
+    .footer{
+        margin: 0;
+    }
+}
