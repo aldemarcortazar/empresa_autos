@@ -480,9 +480,9 @@ p{
 /*************mision  vision*****************/
 
 
-.mision-vision{
+/* .mision-vision{
 
-}
+} */
 .mision-vision .image-logo{
     background-color: var(--dark-alpha-color);
     width: 25rem;
@@ -511,6 +511,7 @@ p{
     height: 4rem;
     display: flex;
     justify-content: center;
+    max-width: 100vw;
     margin-bottom: var(--header-height);
 }
 
@@ -531,7 +532,7 @@ p{
     }
     .mision-vision > .container {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
     }
 }
