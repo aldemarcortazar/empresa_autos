@@ -1,5 +1,23 @@
 document.addEventListener('DOMContentLoaded', e => {
-    Swal.fire('Bienvenido A  la pagina oficial de TRANSPORTE DE CARGA S.A.S')
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 5000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+      
+      Toast.fire({
+        icon: 'success',
+        title: 'Bienvenido A TRANSPORTE DE CARGA S.A.S'
+      })
+      
+
+    // Swal.fire('Bienvenido A  la pagina oficial de TRANSPORTE DE CARGA S.A.S')
 });
 ( (d) => {
     const $btnMenu = d.querySelector('.menu-btn'),
