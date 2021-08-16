@@ -377,6 +377,9 @@ p{
     .text-lg-center{
         text-align: center;
     }
+    .text-lg-justify{
+        text-align: justify;
+    }
 }
 
 
