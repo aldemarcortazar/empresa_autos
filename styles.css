@@ -532,6 +532,53 @@ p{
     height: 80vh;
 }
 
+/***ANIMATION*****/
+
+.animation{
+    margin:0 auto;
+    /* width:300px; */
+    grid-column: 1 / -1;
+}
+
+.lines{
+    animation-name: lines;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.img__camion{
+    border-radius: 50%;
+    height:10rem;
+    width:10rem;
+    position:relative;
+    top:53vh;
+    z-index: 998;
+}
+
+@keyframes lines{
+    0%{
+        transform: rotate(0deg);
+    }
+
+    25%{
+        transform: rotate(90deg);
+    }
+
+    50%{
+        transform: rotate(180deg);
+    }
+
+    75%{
+        transform: rotate(270deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
 @media screen and (min-width: 768px){
     .tratocamiones .container{
         display: grid;
@@ -551,6 +598,14 @@ p{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
+    }
+
+
+    .img__camion{
+        position:relative;
+        top:-26vh;
+        left:50%;
+        /* border:1px solid red; */
     }
 }
 
@@ -593,5 +648,9 @@ p{
     }
     .footer{
         margin: 0;
+    }
+    .animation{
+        margin-left: 10rem;
+        /* transform: translateX(-20rem); */
     }
 }
