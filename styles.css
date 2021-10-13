@@ -547,6 +547,9 @@ p{
     animation-timing-function: linear;
 }
 
+.lines{
+    margin-left: 48%;
+}
 .img__camion{
     border-radius: 50%;
     height:10rem;
@@ -603,8 +606,8 @@ p{
 
     .img__camion{
         position:relative;
-        top:-26vh;
-        left:50%;
+        top:335px;
+        left:36%;
         /* border:1px solid red; */
     }
 }
