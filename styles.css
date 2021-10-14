@@ -110,6 +110,7 @@ p{
 .contact-form textarea{
     font-size: .85rem;
     font-family: var(--font);
+    width: 100%;
 }
 
 .contact-form input{
@@ -149,6 +150,7 @@ p{
 
     .contact-form input[type="submit"]{
         width: 50%;
+        margin: 0 auto;
         grid-column: 1 / 3;
     }
 }
