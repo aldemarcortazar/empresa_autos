@@ -558,6 +558,9 @@ p{
     position: absolute;
 }
 
+.lines{
+    margin-left: 48%;
+}
 .img__camion{
     border-radius: 50%;
     height:8rem;
