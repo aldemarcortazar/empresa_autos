@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', e => {
       
       Toast.fire({
         icon: 'success',
-        title: 'Bienvenido A\n TRANSPORTE DE \n CARGA GM \n S.A.S'
+        title: 'Bienvenido A TRANSPORTE DE  CARGA GM  S.A.S'
       })
       
 
