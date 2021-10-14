@@ -6,15 +6,16 @@ document.addEventListener('DOMContentLoaded', e => {
         timer: 3000,
         timerProgressBar: true,
         didOpen: (toast) => {
-          toast.addEventListener('mouseenter', Swal.stopTimer)
-          toast.addEventListener('mouseleave', Swal.resumeTimer)
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
         }
       })
       
       Toast.fire({
         icon: 'success',
-        title: 'Signed in successfully'
+        title: 'Bienvenido A\n TRANSPORTE DE \n CARGA GM \n S.A.S'
       })
+      
 
     // Swal.fire('Bienvenido A  la pagina oficial de TRANSPORTE DE CARGA S.A.S')
 });
