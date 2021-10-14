@@ -3,17 +3,17 @@ document.addEventListener('DOMContentLoaded', e => {
         toast: true,
         position: 'top-end',
         showConfirmButton: false,
-        timer: 5000,
+        timer: 3000,
         timerProgressBar: true,
         didOpen: (toast) => {
-          toast.addEventListener('mouseenter', Swal.stopTimer)
-          toast.addEventListener('mouseleave', Swal.resumeTimer)
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
         }
       })
       
       Toast.fire({
         icon: 'success',
-        title: 'Bienvenido A TRANSPORTE DE CARGA GM S.A.S'
+        title: 'Bienvenido A TRANSPORTE DE  CARGA GM  S.A.S'
       })
       
 
